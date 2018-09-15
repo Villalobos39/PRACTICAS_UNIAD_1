@@ -4,36 +4,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CALIFICACIONES
+namespace SUMA_VECTORES
 {
     class Program
     {
         static void Main(string[] args)
         {
- 
-                Console.Write(" \n REGISTRO DE CALIFICACIONES \n ");
+                int suma = 0;
+                int[] MEMORIA = new int[15]; // VECTOR DETERMINADO CON 15 ELEMENTOS
 
-                INFORMACION C = new INFORMACION();            
-                string s;
-                do
+            Console.Write("________SUMA DE VECTORES _______\n");
+            for (int CONTADOR = 0; CONTADOR < 15; CONTADOR++) // CICLO FOR PARA CAPTUAR DATOS 
                 {
-                    try
-                    {
-                        C.CAPTURAR();
-                        C.IMPRIMIR();
+                    Console.Write("INGRESA DATOS {0} : ", CONTADOR + 1);
+                    MEMORIA[CONTADOR] = int.Parse(Console.ReadLine());
+                }
 
-                     }
+            for (int CONTAR = 0; CONTAR < 4; CONTAR++) // CICLO FOR PARA SUMAR LOS PRIMEROS 4 NUMEROS
+                {
+                    suma = suma + MEMORIA[CONTAR];
+                }
+                Console.WriteLine("LA SUMA DE LOS 4 NUMEROS ES : {0} ", suma);
+                Console.WriteLine("");
+                suma = 0;
 
-                    catch (FormatException e) { Console.Write(e.Message); }               
-
-                    Console.WriteLine("\n ____________________________________________\n");
-                    Console.WriteLine("DESEA INGRESAR NUEVOS VALORES ? : (s/n) ");
-                    s = Console.ReadLine(); // El programa pregunta si se desea volver a ejecutar
-              
+            for (int CONTAR = 0; CONTAR < 9; CONTAR++) // CICLO FOR PARA SUMAR LOS PRIMEROS 4 NUMEROS
+                 {
+                    suma = suma + MEMORIA[CONTAR];
                  }
-                while (s == "s" || s == "S");
-                Console.Clear();
+                Console.WriteLine("LA SUMA DE LOS 9 NUMERO INGRESADOS ES : {0} ", suma); // RESULTADO
+
+                Console.ReadKey();
+            }
         }
     }
-}
+    
 
